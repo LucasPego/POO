@@ -1,0 +1,9 @@
+Métodos
+public - Pode ser chamado de qualquer classe;
+private - Só pode ser chamado na sua classe;
+
+Atributos
+public - Pode ser lido ou escrito de qualquer classe;
+private - Só pode ser lido ou escrito na sua classe;
+
+No encapsulamento criam-se métodos públicos para poder acessar atributos privados.
