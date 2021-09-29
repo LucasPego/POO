@@ -1,0 +1,10 @@
+Diferenças
+Encapsulamento é a criação de métodos públicos para acessar atributos privados.
+Herança é quando uma classe se extende para outra classe, podendo ter seus métodos utilizados pela mesma.
+Abstração é quando se utiliza coisas do mundo real. Desde coisas paupáveis como automóveis e contruções até coisas não paupáveis como contas de banco, etc.
+
+Vantagens
+Com o encapsulamento tem-se o acesso a atributos privados.
+Com a herança não é necessário criar os mesmo métodos de uma classe em outra.
+Com a abstração os códigos ficam mais didáticos do que com simples variáveis x e y.
+
