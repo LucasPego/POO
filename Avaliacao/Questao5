@@ -1,0 +1,2 @@
+Uma classe precisa de nome, atributos e métodos. Se não há objetos na classe os atributos e métodos devem ser estáticos.
+Para a execução de uma classe a mesma deve ter o main para que sejam utilizados os comportamentos (métodos) da mesma.
