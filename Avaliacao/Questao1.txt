@@ -1,0 +1,2 @@
+Uma classe é composta por objetos com estados e comportamentos similares. É nela que são atribuídos os estados e comportamentos dos objetos.
+O estado de um objeto é definido pelas condições que ele pode estar, já o comportamento diz como o objeto pode chegar aos seus estados.
