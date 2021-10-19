@@ -1,25 +1,20 @@
-package RegistrarVenda;
+package registrandoVendas;
 
 public class Produto {
-
 	private int codigo;
 	private String descricao;
-	private float valorVenda;
-	private float valorCusto;
-	private boolean promocao; //true = sim/false = não//
+	private Float valorVenda;
+	private Float valorCusto;
+	private boolean isPromocao;
 	
-	
-	
-	public Produto(int codigo, String descricao, float valorVenda, float valorCusto, boolean promocao) {
+	public Produto(int codigo, String descricao, Float valorVenda, Float valorCusto, boolean isPromocao) {
+		super();
 		this.codigo = codigo;
 		this.descricao = descricao;
 		this.valorVenda = valorVenda;
 		this.valorCusto = valorCusto;
-		this.promocao = promocao;
+		this.isPromocao = isPromocao;
 	}
-	
-	
-	
 	public int getCodigo() {
 		return codigo;
 	}
@@ -32,31 +27,24 @@ public class Produto {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public float getValorVenda() {
+	public Float getValorVenda() {
 		return valorVenda;
 	}
-	public void setValorVenda(float valorVenda) {
+	public void setValorVenda(Float valorVenda) {
 		this.valorVenda = valorVenda;
 	}
-	public float getValorCusto() {
+	public Float getValorCusto() {
 		return valorCusto;
 	}
-	public void setValorCusto(float valorCusto) {
+	public void setValorCusto(Float valorCusto) {
 		this.valorCusto = valorCusto;
 	}
-
-
-
 	public boolean isPromocao() {
-		return promocao;
+		return isPromocao;
 	}
-
-
-
-	public void setPromocao(boolean promocao) {
-		this.promocao = promocao;
+	public void setPromocao(boolean isPromocao) {
+		this.isPromocao = isPromocao;
 	}
-	
 	
 	
 }

@@ -1,101 +1,71 @@
-package RegistrarVenda;
+package registrandoVendas;
 
 public class Venda {
-	private float desconto; // desconto//
-	private int qtdItens; // quantidade de itens//
-	private float valor = 0.0f; // valor//
-	Produto produto;
-	Vendedor vendedor;
-
-	public float calcularValor(Produto produto, Vendedor vendedor) {
-		float calculando = ((produto.getValorVenda() * this.qtdItens) - this.desconto);
-		return calculando;
-	}
-
-	public boolean efetuarDesconto(float pDesconto, Produto produto, Vendedor vendedor) {
-		this.desconto = (produto.getValorVenda() * (pDesconto/100));
-		float calcDesconto = (produto.getValorVenda() - this.desconto);
-		if (calcDesconto <= produto.getValorCusto()) {
-			System.out.println("Desconto ultrapassa valor de custo, compra inválida!");
-			return false;
-		} else {
-			return true;
-		}
-
-	}
-
-	public float calcularComissao(Produto produto, Vendedor vendedor) {
-		float calcular;
-		if (produto.isPromocao() == true) {
-			calcular = ((vendedor.getComissao() / 100) / 2) * produto.getValorVenda();
-			return calcular;
-		} else {
-			calcular = (vendedor.getComissao() / 100) * produto.getValorVenda();
-			return calcular;
-			
-		}
+	
+	private Produto produto;
+	private Vendedor vendedor;
+	private float desconto;
+	private int quantidadeItens;
+	private float valor;
+	
+	public void calcularValor() {
+		valor = quantidadeItens * (getProduto().getValorVenda() - desconto);
 		
 	}
-
-	public void imprimir(Vendedor vendedor, Produto produto) {
-		System.out.println("Vendedor " + "\nCódigo: " + vendedor.getCodigo() + "\nNome: " + vendedor.getNome()
-				+ "\nComissão: %" + vendedor.getComissao());
-		System.out.println("Quantidade de itens vendidos: " + this.qtdItens);
-		System.out.println("Código e descrição do produto " + "\nCódigo: " + produto.getCodigo() + "\nDescrição: "
-				+ produto.getDescricao());
-		if (this.desconto >= 0  && this.efetuarDesconto(desconto, produto, vendedor)) {
-			System.out.println("Valor do desconto do produto: " + this.desconto);
-		} else {
-			System.out.println("Produto não tem desconto ou desconto ultrapassa valor de custo!.");
+	
+	public float calcularComissao() {
+		float valorComissao = this.valor * (Vendedor.COMISSAO/100);
+		if(produto.isPromocao()) {
+			valorComissao = valorComissao/2;			
+		}		
+		return valorComissao;
+		
+	}
+	
+	public void efetuarDesconto(float percentualDesconto) {
+		float descontoProvisorio = this.produto.getValorVenda() * (percentualDesconto/100);
+		float valorProdutoComDesconto = produto.getValorVenda() - descontoProvisorio;
+		
+		if(valorProdutoComDesconto < produto.getValorCusto()) {
+			System.out.println("Não foi possível efetuar o desconto!");
+			this.desconto = 0;
+		}else {
+			this.desconto = descontoProvisorio;
 		}
-		if (produto.isPromocao() == true) {
-			System.out.println("Produto está em promoção!");
-			System.out.println("Valor de venda do produto: R$" + ((this.calcularValor(produto, vendedor)-this.desconto)-((vendedor.getComissao() / 100) / 2) * produto.getValorVenda()));
-		} else {
-			System.out.println("Produto não está em promoção!");
-			System.out.println("Valor de venda do produto: R$" + ((this.calcularValor(produto, vendedor)-this.desconto)-(vendedor.getComissao() / 100) * produto.getValorVenda()));
-		}
-		return;
 	}
-
-	public int getQtdItens() {
-		return qtdItens;
+	
+	public void imprimir() {
+		float valorComissao = calcularComissao();
+		System.out.println("Código: " + this.vendedor.getCodigo());
+		System.out.println("Vendedor: " + this.vendedor.getNome());
+		System.out.println("Comissão: R$" + valorComissao);
+		System.out.println("Quantidade: " + this.quantidadeItens);
+		System.out.println("Código do Produto: " + this.produto.getCodigo());
+		System.out.println("Descricao: " + this.produto.getDescricao());
+		System.out.println("Valor Produto: R$" + getProduto().getValorVenda());
+		System.out.println("Em promocção: " + getProduto().isPromocao());
+		System.out.println("Valor do desconto: R$" + this.desconto);
+		System.out.println("Valor total: R$" + valor);
+		
 	}
-
-	public void setQtdItens(int qtdItens) {
-		this.qtdItens = qtdItens;
-	}
-
-	public float getValor() {
-		return valor;
-	}
-
-	public void setValor(float valor) {
-		this.valor = valor;
-	}
-
+	
 	public Produto getProduto() {
 		return produto;
 	}
-
 	public void setProduto(Produto produto) {
 		this.produto = produto;
 	}
-
 	public Vendedor getVendedor() {
 		return vendedor;
 	}
-
 	public void setVendedor(Vendedor vendedor) {
 		this.vendedor = vendedor;
 	}
-
-	public float getDesconto() {
-		return desconto;
+	public int getQuantidadeItens() {
+		return quantidadeItens;
 	}
-
-	public void setDesconto(float desconto) {
-		this.desconto = desconto;
+	public void setQuantidadeItens(int quantidadeItens) {
+		this.quantidadeItens = quantidadeItens;
 	}
-
+	
 }

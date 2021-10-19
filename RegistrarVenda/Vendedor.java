@@ -1,17 +1,18 @@
-package RegistrarVenda;
+package registrandoVendas;
 
 public class Vendedor {
-	
 	private String nome;
 	private int codigo;
-	private int comissao; //porcentagem
+	public static float COMISSAO = 5.0f;
 	private String endereco;
 	
-	public Vendedor(String nome, String endereco, int codigo, int comissao) {
+	
+	
+	public Vendedor(String nome, int codigo, String endereco) {
+		super();
 		this.nome = nome;
-		this.endereco = endereco;
 		this.codigo = codigo;
-		this.comissao = comissao;
+		this.endereco = endereco;
 	}
 	
 	
@@ -27,11 +28,11 @@ public class Vendedor {
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
-	public int getComissao() {
-		return comissao;
+	public static float getCOMISSAO() {
+		return COMISSAO;
 	}
-	public void setComissao(int comissao) {
-		this.comissao = comissao;
+	public static void setCOMISSAO(float cOMISSAO) {
+		COMISSAO = cOMISSAO;
 	}
 	public String getEndereco() {
 		return endereco;
@@ -40,5 +41,5 @@ public class Vendedor {
 		this.endereco = endereco;
 	}
 	
-
+	
 }
