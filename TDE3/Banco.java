@@ -19,14 +19,13 @@ public class Banco {
 	}
 
 	public static void menuPrincipal() {
-		System.out.println("Menu de Opções :");
+		System.out.println("Menu de OpÃ§Ãµes :");
 		System.out.println("1 : Cadastrar Cliente");
 		System.out.println("2 : Consultar Cliente");
 		System.out.println("3 : Listar Clientes");
 		System.out.println("4 : Sacar");
 		System.out.println("5 : Depositar");
 		System.out.println("6 : Sair");
-		System.out.println("7 : Sair");
 	}
 
 	public static void main(String[] args) {
@@ -44,7 +43,7 @@ public class Banco {
 				int numeroConta;
 				System.out.println("Informe o nome ");
 				nome = leitor.nextLine();
-				System.out.println("Informe o número da conta");
+				System.out.println("Informe o nÃºmero da conta");
 				numeroConta = Integer.parseInt(leitor.nextLine());
 				Cliente cliente = new Cliente(nome, numeroConta);
 				banco.addCliente(cliente);
@@ -75,7 +74,7 @@ public class Banco {
 				System.exit(0);
 			}
 			default: {
-				System.out.println("Opção não existe");
+				System.out.println("OpÃ§Ã£o nÃ£o existe");
 			}
 			}
 		}
