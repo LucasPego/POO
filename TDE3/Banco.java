@@ -14,9 +14,11 @@ public class Banco {
         clientes.add(c);
     }
     public static void main(String[] args) {
-        Banco banco = new Banco("MeuBanco&Cia.");
-
-        banco.addCliente  (new Cliente ("Lucas", 200));
+        Banco banco = new Banco("Banco do Lucas");
+        
+        Cliente lucas = new Cliente("Lucas",200);
+        banco.addCliente (lucas);
+        
         banco.addCliente  (new Cliente ("Gabriel",  201));
         banco.addCliente  (new Cliente ("Guilherme",  202));
 
