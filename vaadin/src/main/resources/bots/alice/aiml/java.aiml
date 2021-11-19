@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0">
+<!-- -->
+<!-- Free software (c) 2011 ALICE A.I. Foundation.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.0 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+<!-- Last modified 11/23/2011 -->
+<!-- -->
+<category>
+<pattern>JAVA</pattern>
+<template><set name="she">JAVA</set> A melhor linguagem do mundo.</template>
+</category>
+<category><pattern>FUJIOKA</pattern> <template>Artificial
+Ele é velhinho , mas é gente boa.
+<think>
+<set name="it"><set name="topic">PROFESSOR</set> </set></think>
+</template>
+</category>
+<category><pattern>BRUNO</pattern>
+<template>Ah o Bruno é o monitor, ele ajuda o velhinho do FUji</template>
+</category>
+<category><pattern>RAFAELA *</pattern>
+<template>Dr. Rafaela é a melhor coodenadora de todos os tempos.</template>
+</category>
+<category><pattern>* Pensamento matemático *</pattern>
+<template>È a melhor disciplina de todas, sério mesmo. <think> <set name="she">Rafaela</set> </think> manda bem d+ </template>
+</category>
+</aiml>
